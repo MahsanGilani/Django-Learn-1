@@ -1,2 +1,2 @@
 # Django-Learn-1
-Learning Django
+This basic project is for the beginning of learning Django.
