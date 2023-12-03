@@ -1,0 +1,9 @@
+{% if messages %}
+
+    {% for msg in messages %}
+
+        <p class='alert alert-dismissible alert-{{ msg.tags }}' role='alert'> {{ msg }} </p>
+
+    {%endfor%}
+
+{% endif %}

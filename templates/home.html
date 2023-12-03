@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Home page {% endblock %}
+
+{% block content %}
+    <h3>
+        Home Page
+    </h3>
+    {% if request.user.is_authenticated %}
+        <h6>**Hello Dear {{ request.user.first_name }}**</h6>
+    {% else %}
+        <h6>**Welcome to our page**</h6>
+    {% endif %}
+    <div class='card'>
+        {% for todo in all %}
+            <a href={% url 'details' todo.id %} class="card-body text-decoration-none ">{{ todo.title }}</a><br/>
+        {%endfor%}
+        
+        {% comment %} {% for todo in var %}
+            <p>{{ todo.body }}</p>
+        {%endfor%} {% endcomment %}
+
+    </div>
+{% endblock %}
